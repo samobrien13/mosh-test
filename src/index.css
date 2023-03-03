@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #003d3b;
+  background-color: #f9f9f2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "MaisonNeue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  @font-face {
+    font-family: MaisonNeue;
+    src: url("../../public/fonts/MaisonNeue-Book.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MaisonNeue;
+    src: url("../../public/fonts/MaisonNeue-Demi.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: MaisonNeue;
+    src: url("../../public/fonts/MaisonNeue-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: ClearFaceITC;
+    src: url("../../public/fonts/ClearfaceITCPro-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    @apply text-body;
+    font-family: MaisonNeue;
+  }
+  h1 {
+    @apply text-h1;
+    font-family: ClearFaceITC;
+    font-weight: bold;
+  }
+  h2 {
+    @apply text-h2;
+    font-weight: 600;
+  }
+  @screen sm {
+    body {
+      @apply text-body-sm;
+    }
+    h1 {
+      @apply text-h1-sm;
+    }
+  }
+}
