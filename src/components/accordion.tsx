@@ -2,16 +2,19 @@ import { useState } from "react";
 import ChevronUp from "../assets/chevron-up.svg";
 import ChevronDown from "../assets/chevron-down.svg";
 import cn from "classnames";
+import { Loading } from "./loading";
 
 interface AccordionProps {
   title: string;
   children: React.ReactNode;
+  isLoading?: boolean;
   className?: string;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
   title,
   children,
+  isLoading,
   className,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +31,7 @@ const Accordion: React.FC<AccordionProps> = ({
           hidden: !isOpen,
         })}
       >
-        {children}
+        {isLoading ? <Loading /> : children}
       </div>
     </div>
   );

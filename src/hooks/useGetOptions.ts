@@ -9,8 +9,14 @@ const getOptions = async () => {
   const response = await fetch(
     "https://moshhero.free.beeceptor.com/my/api/options"
   );
-  const data = await response.json();
-  return data as Options;
+
+  if (response.ok) {
+    const data = await response.json();
+
+    return data as Options;
+  } else {
+    throw new Error("Error fetching options");
+  }
 };
 
 export const useGetOptions = () => {
